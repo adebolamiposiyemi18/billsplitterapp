@@ -161,7 +161,7 @@ expenses.textContent = "Personal Expenses: " + money.format(friends[i].expense)
 card.appendChild(expenses)
 
 let share = document.createElement("p")
-share.textContent = "Their Share: " + money.format(friends[i].share)
+share.textContent = "Your Share: " + money.format(friends[i].share)
 
 card.appendChild(share)
 
@@ -193,65 +193,6 @@ cards.appendChild(card)
 }
 
 summary.appendChild(cards)
-
-
-let heading = document.createElement("h3")
-
-    heading.textContent = "Who Pays Whom?"
-
-    summary.appendChild(heading)
-
-let debtors = []
-let creditors = []
-
-for(let i = 0 ; i < friends.length; i++){
- if(friends[i].balance < -0.01){
-    
-  debtors.push({
-    name: friends[i].name,
-    amount: -friends[i].balance
-  })
- }
-
- else if(friends[i].balance > 0.01){
-    creditors.push({
-    name:friends[i].name,
-    amount: friends[i].balance
-    })
- }
-}
-let i = 0
-let j = 0
-
-if(debtors.length === 0){
-    let message = document.createElement("p")
-
-   message.textContent = "Everyone is settled!"
-
- summary.appendChild(message)
-}
- while (i < debtors.length && j < creditors.length) {
-
-  let amount = Math.min(      
-     debtors[i].amount,
-     creditors[j].amount
-)}
-
- let payment = document.createElement("div")
-
- payment.className = "payment"
- let paymentText = document.createElement("p")
- console.log(creditors);
-console.log(j);
-console.log(creditors[j]);
-
- paymentText.textContent = debtors[i].name + " pays " +
-        creditors[j].name + " " + money.format(amount)
-
- payment.appendChild(paymentText)
-
-summary.appendChild(payment)
-
 
 }
 

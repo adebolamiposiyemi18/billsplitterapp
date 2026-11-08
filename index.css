@@ -1,0 +1,66 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"Fraunces";
+    font-style: italic;
+    background: #f4f5f7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    animation: appear 1s ease;
+}
+
+h1 {
+    font-style: normal;
+    font-family: "Outfit" !important;
+    color: #263b32;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+a {
+    display: inline-block;
+    background: #247a54;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    background: #185b3d;
+    transform: translateY(-4px);
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
